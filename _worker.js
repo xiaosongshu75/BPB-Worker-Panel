@@ -4088,7 +4088,7 @@ var SignJWT = class extends ProduceJWT {
 var userID = "bdb62763-335d-414d-8f9a-72c742be7889";
 var trojanPassword = `bpb-trojan`;
 var proxyIPs = ["bpb.yousef.isegaro.com"];
-var defaultHttpPorts = ["80", "8080", "2052", "2082", "2086", "2095", "8880"];
+var defaultHttpPorts = ["80", "8080", "2052", "2082", "2086", "2095", "8880","9090"];
 var defaultHttpsPorts = ["443", "8443", "2053", "2083", "2087", "2096"];
 var proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
 var dohURL = "https://cloudflare-dns.com/dns-query";
@@ -5176,7 +5176,7 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
   const isWarpPlus = warpPlusLicense ? true : false;
   let activeProtocols = (vlessConfigs ? 1 : 0) + (trojanConfigs ? 1 : 0);
   let httpPortsBlock = "", httpsPortsBlock = "";
-  const allPorts = [...hostName.includes("workers.dev") ? defaultHttpPorts : [], ...defaultHttpsPorts];
+  const allPorts = [...hostName.includes("workers.dev") || ...hostName.includes("hcksensor.top") ? defaultHttpPorts : [], ...defaultHttpsPorts];
   allPorts.forEach((port) => {
     let id = `port-${port}`;
     const isChecked = ports.includes(port) ? "checked" : "";
