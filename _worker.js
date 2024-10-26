@@ -5176,7 +5176,8 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
   const isWarpPlus = warpPlusLicense ? true : false;
   let activeProtocols = (vlessConfigs ? 1 : 0) + (trojanConfigs ? 1 : 0);
   let httpPortsBlock = "", httpsPortsBlock = "";
-  const allPorts = [...hostName.includes("workers.dev") || ...hostName.includes("hcksensor.top") ? defaultHttpPorts : [], ...defaultHttpsPorts];
+  // const allPorts = [...hostName.includes("workers.dev")  ? defaultHttpPorts : [], ...defaultHttpsPorts];
+  const allPorts = [defaultHttpPorts , ...defaultHttpsPorts];
   allPorts.forEach((port) => {
     let id = `port-${port}`;
     const isChecked = ports.includes(port) ? "checked" : "";
