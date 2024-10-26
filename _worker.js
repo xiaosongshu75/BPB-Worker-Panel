@@ -5177,7 +5177,7 @@ function renderHomePage(proxySettings, hostName, isPassSet) {
   let activeProtocols = (vlessConfigs ? 1 : 0) + (trojanConfigs ? 1 : 0);
   let httpPortsBlock = "", httpsPortsBlock = "";
   // const allPorts = [...hostName.includes("workers.dev")  ? defaultHttpPorts : [], ...defaultHttpsPorts];
-  const allPorts = [defaultHttpPorts , ...defaultHttpsPorts];
+  const allPorts = [ ...defaultHttpPorts , ...defaultHttpsPorts];
   allPorts.forEach((port) => {
     let id = `port-${port}`;
     const isChecked = ports.includes(port) ? "checked" : "";
